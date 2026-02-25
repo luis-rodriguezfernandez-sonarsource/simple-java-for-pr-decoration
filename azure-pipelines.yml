@@ -27,10 +27,10 @@ steps:
   inputs:
     jdkVersionOption: 1.21
     sonarQubeRunAnalysis: true
+    extraProperties: |
+      -X
 
 # Publish Quality Gate Result task
 - task: SonarCloudPublish@4
   inputs:
     pollingTimeoutSec: '300'
-    extraProperties: |
-      -X
