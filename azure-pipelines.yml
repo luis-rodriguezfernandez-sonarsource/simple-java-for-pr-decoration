@@ -27,7 +27,7 @@ steps:
   inputs:
     jdkVersionOption: 1.21
     goals: 'clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:5.5.0.6356:sonar'
-    extraProperties: |
+    options: |
       -X
 
 # Publish Quality Gate Result task
