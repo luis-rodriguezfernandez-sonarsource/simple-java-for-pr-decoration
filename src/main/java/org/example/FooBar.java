@@ -52,4 +52,9 @@ public class FooBar {
     public static int divide(int a, int b) {
         return a / b; // Issue: b could be zero
     }
+
+    // 7. NumberFormatException risk: input not validated
+    public static int parseInt(String s) {
+        return Integer.parseInt(s); // Issue: s may not be a valid integer string
+    }
 }
