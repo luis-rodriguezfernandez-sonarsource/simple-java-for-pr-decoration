@@ -62,4 +62,9 @@ public class FooBar {
     public static int getArrayLength(int[] arr) {
         return arr.length; // Issue: arr could be null
     }
+
+    // 9. ClassCastException risk: object may not be a String
+    public static String castToString(Object obj) {
+        return (String) obj; // Issue: obj may not be a String
+    }
 }
