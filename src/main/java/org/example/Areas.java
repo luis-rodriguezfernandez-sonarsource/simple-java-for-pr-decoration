@@ -15,4 +15,8 @@ public class Areas {
     public static double triangle(double base, double height) {
         return 0.5 * base * height;
     }
+
+    public static double pentagon(double side) {
+        return (5.0 / 4.0) * side * side / Math.tan(Math.PI / 5);
+    }
 }
