@@ -1,6 +1,5 @@
 trigger:
-- main # or another name representing your main branch
-- feature/*
+- main
 
 steps:
  # Checkout the repository
