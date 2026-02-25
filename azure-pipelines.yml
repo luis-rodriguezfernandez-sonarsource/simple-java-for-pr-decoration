@@ -21,13 +21,14 @@ steps:
     scannerMode: 'other'
     extraProperties: | 
       sonar.projectKey=luisrodriguezfernandez_simple-java-for-pr-decoration
-      sonnar.verbose=true
 
 # If you use Maven: add the Execute Maven goal as shown below
 - task: Maven@4
   inputs:
     jdkVersionOption: 1.21
-    sonarQubeRunAnalysis: true
+    goals: 'clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:5.5.0.6356:sonar'
+    extraProperties: |
+      -X
 
 # Publish Quality Gate Result task
 - task: SonarCloudPublish@4
