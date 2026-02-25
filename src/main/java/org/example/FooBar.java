@@ -57,4 +57,9 @@ public class FooBar {
     public static int parseInt(String s) {
         return Integer.parseInt(s); // Issue: s may not be a valid integer string
     }
+
+    // 8. NullPointerException risk: array may be null
+    public static int getArrayLength(int[] arr) {
+        return arr.length; // Issue: arr could be null
+    }
 }
