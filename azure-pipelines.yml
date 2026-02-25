@@ -1,0 +1,26 @@
+trigger:
+- main # or another name representing your main branch
+- feature/*
+
+steps:
+ # Checkout the repository
+- checkout: self
+  fetchDepth: 0
+
+# Prepare Analysis Configuration task
+- task: SonarCloudPrepare@4
+  inputs:
+    SonarCloud: 'sonarcloud.io'
+    organization: 'luisrodriguezfernandez'
+    scannerMode: 'other'
+    extraProperties: 'sonar.projectKey=luisrodriguezfernandez_simple-java-for-pr-decoration'
+
+# If you use Maven: add the Execute Maven goal as shown below
+- task: Maven@4
+  inputs:
+    sonarQubeRunAnalysis: true
+
+# Publish Quality Gate Result task
+- task: SonarCloudPublish@4
+  inputs:
+    pollingTimeoutSec: '300'
