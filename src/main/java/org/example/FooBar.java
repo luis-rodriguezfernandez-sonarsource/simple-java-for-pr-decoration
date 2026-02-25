@@ -47,4 +47,9 @@ public class FooBar {
         BufferedReader br = new BufferedReader(reader);
         return br.readLine(); // Issue: reader and br not closed
     }
+
+    // 6. Division by zero risk: denominator not checked
+    public static int divide(int a, int b) {
+        return a / b; // Issue: b could be zero
+    }
 }
