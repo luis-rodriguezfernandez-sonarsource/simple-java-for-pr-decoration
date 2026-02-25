@@ -1,5 +1,6 @@
 trigger:
 - main
+- 'test-pr-*'
 
 pr:
   branches:
