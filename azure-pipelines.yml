@@ -19,7 +19,8 @@ steps:
     SonarCloud: 'sonarcloud.io'
     organization: 'luisrodriguezfernandez'
     scannerMode: 'other'
-    extraProperties: 'sonar.projectKey=luisrodriguezfernandez_simple-java-for-pr-decoration'
+    extraProperties: | 
+      sonar.projectKey=luisrodriguezfernandez_simple-java-for-pr-decoration
 
 # If you use Maven: add the Execute Maven goal as shown below
 - task: Maven@4
@@ -31,3 +32,5 @@ steps:
 - task: SonarCloudPublish@4
   inputs:
     pollingTimeoutSec: '300'
+    extraProperties: |
+      -X
