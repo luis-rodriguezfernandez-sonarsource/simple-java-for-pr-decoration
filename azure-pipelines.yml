@@ -17,6 +17,7 @@ steps:
 # If you use Maven: add the Execute Maven goal as shown below
 - task: Maven@4
   inputs:
+    jdkVersionOption: 1.21
     sonarQubeRunAnalysis: true
 
 # Publish Quality Gate Result task
